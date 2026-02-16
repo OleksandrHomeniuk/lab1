@@ -41,6 +41,8 @@ def bfs(start, finish):
     rejected_states = 0 # скільки відкинуто
     step = 0 # номер кроку
 
+    max_queue_size = 1  # нова змінна
+
     while queue:
         # КРОКИ ВИВОДЯТЬСЯ ПОСЛІДОВНО
         input("--> Enter")
@@ -61,6 +63,7 @@ def bfs(start, finish):
                 "generated": generated_states,
                 "stored": len(visited),
                 "rejected": rejected_states
+                "max_queue": max_queue_size
             }
 
         zero_index = state.index(0) # Знаходимо позицію порожньої клітинки
@@ -81,6 +84,8 @@ def bfs(start, finish):
                 print("--Додано в чергу\n")
                 visited.add(new_state)
                 queue.append((new_state, path + [state], depth + 1))
+                # оновлюємо максимум
+                max_queue_size = max(max_queue_size, len(queue))
             else:
                 print("--Відкинуто\n")
                 rejected_states += 1
@@ -110,3 +115,4 @@ else:
 print("Згенеровано станів:", result["generated"])
 print("Занесено в базу:", result["stored"])
 print("Відкинуто станів:", result["rejected"])
+print("Максимальний розмір черги:", result["max_queue"])
