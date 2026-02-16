@@ -45,7 +45,7 @@ def bfs(start, finish):
 
     while queue:
         # КРОКИ ВИВОДЯТЬСЯ ПОСЛІДОВНО
-        input("--> Enter")
+        # input("--> Enter")
 
         # Беремо перший елемент з черги
         state, path, depth = queue.popleft()
