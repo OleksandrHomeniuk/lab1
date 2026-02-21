@@ -107,6 +107,6 @@ if result["solution"]:
 else:
     print("\nРозв’язок не знайдено")
 
-print("Згенеровано станів:", result["generated"])
+print("Всього згенеровано станів:", result["generated"])
 print("Занесено в базу:", result["stored"])
 print("Відкинуто станів:", result["rejected"])
