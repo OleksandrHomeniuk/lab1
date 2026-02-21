@@ -112,7 +112,7 @@ if result["solution"]:
 else:
     print("\nРозв’язок не знайдено")
 
-print("Згенеровано станів:", result["generated"])
+print("Generated states:", result["generated"])
 print("Занесено в базу:", result["stored"])
 print("Відкинуто станів:", result["rejected"])
 print("Максимальний розмір черги:", result["max_queue"])
